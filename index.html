@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-9">
+    <meta name="viewport" content "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Food delively</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Ubuntu:wght@300&display=swap"
+    rel="stylesheet">
+    <style>
+      body{background-color:black;}
+      /*windows*/
+      *{
+      margin:0px;
+      padding:0px;
+      }
+   			html{scroll-behavior:smooth;}
+      #navbar{position: relative;display:flex; align-items:center;}
+      #navbar::before{content:""; background-color:gray; position: absolute; top:0px; left:0px;width:100%; height:100%; z-index:-1; opacity:1;}
+      #logo{
+      margin:10px 34px;
+      }
+      #logo img{border:2px solid lightpink; border-radius:100%;
+      margin:0px 6px;
+      height:60px;
+      }
+      #navbar ul{font-family: 'Baloo 2', cursive;display:flex;}
+      #navbar ul li{list-style:none; font-size:1.3rem;}
+      #navbar ul li a{color:white;display:block; padding: 3px 22px; border-radius:15px; text-decoration:none;}
+      #navbar ul li a:hover{color:black; background-color:white;}
+      #home::before{content:""; background:url('https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png') no-repeat center center/cover; position: absolute; width:100%; height:340px;top:0px; left:0px; z-index:-1; opacity:0.8;}
+      #home{height:578;display:flex; flex-direction: column; padding:3px 200px;justify-content:center; align-items: center;}   
+					#home h1{font-weight:bold;font-family: 'Ubuntu', sans-serif;color:white; text-align:center;}
+      #home p{font-family: 'Ubuntu', sans-serif;color:white; text-align:center; font-size:1.8rem;}
+      .food{padding:0px 15px;}
+      #services{ flex-wrap:wrap;margin: 30px; display:flex; align-items:space-evenly;; justify-content:center;}
+      #services .box{ background-color:lightgray; padding:34px;margin:2px 8px;border:2px solid brown;border-radius:28px;}
+      #services .box img{display:block; margin:auto;height:210px;}
+      .head1{color:white;font-size:3.2rem; padding:12px;}
+      .head2{text-align:center;font-size:2.3rem; padding:12px;}
+      #services-content h1{color:white;font-size:2rem;border:2px solid white; background-color: brown;  border-radius:22px;text-align:center;margin:auto;width:250px;}
+      .btn{ font-size:1.3rem;color:white;padding:6px 20px; margin:30px;border:2px solid white; background-color: brown;border-radius:10px; courser:ponter;}
+      .btn:hover{color:black; background-color:red;}
+      #client-content h1{margin-bottom:-22px;text-align:center;}
+      #icon{filter:invert(50%);}
+      #clients{flex-wrap:wrap;overflow:hidden;display:flex; align-items:center; justify-content:center;}
+      #clients::before{content:""; background:url('https://cdn.pixabay.com/photo/2017/05/31/17/48/italian-food-2361054_1280.jpg') no-repeat center center/cover; position: absolute; width:100%; height:320px; left:0px;z-index:-1; opacity:0.5;}
+      #clients .clients-items img{padding:12px;height:160px; margin-bottom: -80px; }
+      .clients-items{padding-bottom:64px;}
+      #contact h1{text-align:center;margin-top:75px; }
+      #contact::before{content:""; background:url('https://cdn.pixabay.com/photo/2017/06/14/16/20/network-2402637_1280.jpg') no-repeat center center/cover; position: absolute; width:100%; left:0px;height:71%;z-index:-1; opacity:0.9;}
+      #contact-box{display:flex;justify-content:center; align-items:center;padding-bottom:34px;}
+      #contact-box input, #contact-box textarea{width:100%; padding:12px 15px;border-radius:10px;}
+      #contact-box form{width:40%;}
+      #contact-box label{font-family: 'Ubuntu', sans-serif;font-size:1.3rem;color:white;}
+      #contact-box #submit{width:106%;font-family: 'Baloo 2', cursive;font-size:1.8rem;margin-top:22px; background-color: black; color:white; border:2px solid white;}
+      #contact-box #submit:hover{background: red; color:#f18f18f18;}
+      footer{display-flex;justify-content:center;align-items:flex-end; background:black; color : white; }
+      footer p{text-align:center;padding:9px 20px;display:flex; align-items:center; justify-content:center;}
+      /*Tablet*/
+      @media only screen and (min-width:768px) and (max-width:1365px){
+      #logo{
+      margin:8px 14px;
+      }
+      #logo img{
+      margin:0px 6px;
+      height:50px;
+      }
+      #home::before{height:28%;}
+      #home{padding:3px 50px;}
+      #home p{font-size:1.5rem;}
+      .btn{ font-size:1.3rem;padding:3px 10px; margin:24px;}
+      #services-content h1{width:200px;margin-bottom:-22px;}
+      .head1{font-size:2.5rem; padding:10px;}
+      .head2{font-size:3rem; padding:10px;}
+      #services .box img{height:430px;}
+      #services .box{margin:15px 0px;}
+      #clients::before{height:715px;}
+      #client-content h1{margin-bottom: -40px;}
+      #clients .clients-items img{padding:32px;height:195px; margin-bottom: -20px; }
+      #contact::before{height:52%;}
+      #contact h1{margin-top:49px;}
+      #contact-box form{width:60%; padding-right:32px;}
+      #contact-box #submit{width:107%;}
+      }
+      /*mobile*/
+      @media only screen and (min-width:0px) and (max-width:767px){
+      #logo img{
+      height:40px;
+      }
+      #navbar{flex-direction:column;}
+      #navbar ul li a{padding: 3px 14px;}
+      #home::before{height:47%;}
+      .head1{font-size:1.7rem; padding:10px;}
+      .head2{font-size:1.8rem; padding:10px;}
+      #home p{font-size:1.1rem;}
+      #home{padding:3px 5px; }
+      .btn{ font-size:1rem;padding:1px 5px; margin:14px;}
+      #services-content h1{width:200px;}
+					#services .box img{height:160px;}
+      #services .box{margin:6px 0px;}
+      #clients::before{height:534px;}
+      #client-content h1{margin-bottom: -5px;}
+      #clients .clients-items img{padding:2px;height:117px; margin-bottom: 0px; }
+      #contact::before{height:96%;}
+      #contact h1{margin-top:69px;}
+      #contact-box form{width:80%; padding-right:32px;}
+      #contact-box #submit{width:111%;}
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav id="navbar" }>
+      <div id="logo">
+        <img src="https://f000.backblazeb2.com/file/ai-generated-photos/bg-removal-uploads/100/905efa67-095a-467b-8950-89e0bdf28935.png">
+      </div>
+      <ul>
+        <li><a href="#home">Home</a>
+        </li>
+        <li><a href="#services-content">Services</a>
+        </li>
+        <li><a href="#client-content">Client</a>
+        </li>
+        <li><a href="#contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <section id="home">
+      <h1 class="head1">Welcome to Nikhil Meal</h1>
+      <p>Discover the best food & drinks in</p>
+      <p>Patna City</p>
+      <button class="btn">Order now</button>
+    </section>
+    <section id="services-content">
+      <h1 class="head1">Our Services</h1>
+      <div id="services">
+        <div class="box">
+          <img src="https://media.istockphoto.com/photos/readytoeat-healthy-chicken-dinner-picture-id635849674?k=6&m=635849674&s=612x612&w=0&h=SBkdi5gtuvUJorBMA1fTJSzRaJHD7YflcAouOWxF5Xc="
+          class="food">
+          <h2 class="head2">Order food online</h2>
+        </div>
+        <div class="box">
+          <img src="https://cdn.pixabay.com/photo/2021/02/08/07/39/chef-5993951_1280.jpg"
+          class="food">
+          <h2 class="head2">Go out for a meal</h2>
+        </div>
+        <div class="box">
+          <img src="https://media.istockphoto.com/photos/couple-holding-hands-picture-id514369530?k=6&m=514369530&s=612x612&w=0&h=2JeecGfKcknKjR0YsJ5LORyaapm2yNqGUY0WGwCqaGA="
+          class="food">
+          <h2 class="head2">Romantic dinner </h2>
+        </div>
+      </div>
+    </section>
+    <section id="client-content">
+      <h1 class="head1">Our Clients</h1>
+      <div id="clients">
+        <div class="clients-items">
+          <img src="https://cdn.pixabay.com/photo/2017/11/19/08/44/apple-2962084__480.png"
+          alt="our client" id="icon">
+        </div>
+        <div class="clients-items">
+          <img src="https://img.icons8.com/color/344/microsoft.png" alt="our client">
+        </div>
+        <div class="clients-items">
+          <img src="https://img.icons8.com/color/344/amazon.png" alt="our client">
+        </div>
+        <div class="clients-items">
+          <img src="https://img.icons8.com/color/344/netflix-desktop-app.png">
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <h1 class="head1">Contact us</h1>
+      <div id="contact-box">
+        <form action="backend.php">
+          <div class="form-group">
+            <label for="name">Name:
+              <label>
+                <input type="text" name="name" id="name" placeholder="Enter your name">
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail:
+              <label>
+                <input type="email" name="email" id="email" placeholder="Enter your E-mail">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number:
+              <label>
+                <input type="number" name="phone" id="phone" placeholder="Enter your phone number">
+          </div>
+          <div class="form-group">
+            <label for="address">Address:
+              <label>
+                <textarea name="address" id="address" cols="30" rows="5">
+                </textarea>
+          </div>
+          <div class="form-group">
+            <input type="submit" name="submit" value="submit" id="submit">
+          </div>
+        </form>
+      </div>
+    </section>
+    <footer>
+      <p>copyright © www.nikhilmeal.com. All right reserved!</p>
+    </footer>
+  </body>
+
+</html>
+<!--
+Visual Code Mobile
+Developed By Manish Nirmal
+App Available on Play Store :-
+https://play.google.com/store/apps/details?id=lk.visual.code.mobile
+YouTube :-
+https://youtube.com/ManishNirmal
+-->
